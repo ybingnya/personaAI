@@ -1,0 +1,334 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* personaAI Design System — Editorial Magazine × Swiss Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Core tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* primary = black */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    /* secondary = white with hairline border */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
+
+    /* muted = surface-soft */
+    --muted: 60 5% 97%;
+    --muted-foreground: 0 0% 0%;
+
+    /* accent = magenta */
+    --accent: 337 100% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 337 100% 62%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* hairline */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+
+    /* border radius */
+    --radius: 0.5rem;
+    --radius-xs: 2px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-pill: 50px;
+    --radius-full: 9999px;
+
+    /* pastel blocks */
+    --block-lime: 79 61% 81%;
+    --block-lilac: 262 79% 82%;
+    --block-cream: 38 73% 90%;
+    --block-pink: 0 63% 88%;
+    --block-mint: 133 44% 85%;
+    --block-coral: 21 79% 85%;
+    --block-navy: 241 35% 18%;
+
+    /* semantic */
+    --semantic-success: 137 69% 37%;
+    --surface-soft: 60 5% 97%;
+    --hairline: 0 0% 90%;
+    --hairline-soft: 0 0% 95%;
+
+    /* charts */
+    --chart-1: 79 61% 81%;
+    --chart-2: 262 79% 82%;
+    --chart-3: 133 44% 85%;
+    --chart-4: 21 79% 85%;
+    --chart-5: 337 100% 62%;
+
+    /* sidebar (unused but defined for shadcn compat) */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 60 5% 97%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 0%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Typography scale */
+.text-display-xl {
+  font-size: 86px;
+  font-weight: 340;
+  line-height: 1.00;
+  letter-spacing: -1.72px;
+  font-family: 'Inter', sans-serif;
+}
+.text-display-lg {
+  font-size: 64px;
+  font-weight: 340;
+  line-height: 1.10;
+  letter-spacing: -0.96px;
+  font-family: 'Inter', sans-serif;
+}
+.text-headline {
+  font-size: 26px;
+  font-weight: 540;
+  line-height: 1.35;
+  letter-spacing: -0.26px;
+  font-family: 'Inter', sans-serif;
+}
+.text-subhead {
+  font-size: 26px;
+  font-weight: 340;
+  line-height: 1.35;
+  letter-spacing: -0.26px;
+  font-family: 'Inter', sans-serif;
+}
+.text-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.45;
+  font-family: 'Inter', sans-serif;
+}
+.text-body-lg {
+  font-size: 20px;
+  font-weight: 330;
+  line-height: 1.40;
+  letter-spacing: -0.14px;
+  font-family: 'Inter', sans-serif;
+}
+.text-body {
+  font-size: 18px;
+  font-weight: 320;
+  line-height: 1.45;
+  letter-spacing: -0.26px;
+  font-family: 'Inter', sans-serif;
+}
+.text-body-sm {
+  font-size: 16px;
+  font-weight: 330;
+  line-height: 1.45;
+  letter-spacing: -0.14px;
+  font-family: 'Inter', sans-serif;
+}
+.text-link {
+  font-size: 20px;
+  font-weight: 480;
+  line-height: 1.40;
+  letter-spacing: -0.10px;
+  font-family: 'Inter', sans-serif;
+}
+.text-btn {
+  font-size: 20px;
+  font-weight: 480;
+  line-height: 1.40;
+  letter-spacing: -0.10px;
+  font-family: 'Inter', sans-serif;
+}
+.text-eyebrow {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.30;
+  letter-spacing: 0.54px;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', 'Geist Mono', monospace;
+}
+.text-caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.00;
+  letter-spacing: 0.60px;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', 'Geist Mono', monospace;
+}
+
+/* Pastel block backgrounds */
+.bg-block-lime { background-color: hsl(var(--block-lime)); }
+.bg-block-lilac { background-color: hsl(var(--block-lilac)); }
+.bg-block-cream { background-color: hsl(var(--block-cream)); }
+.bg-block-pink { background-color: hsl(var(--block-pink)); }
+.bg-block-mint { background-color: hsl(var(--block-mint)); }
+.bg-block-coral { background-color: hsl(var(--block-coral)); }
+.bg-block-navy { background-color: hsl(var(--block-navy)); }
+.bg-surface-soft { background-color: hsl(var(--surface-soft)); }
+
+/* Button base */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 9999px;
+  font-size: 18px;
+  font-weight: 480;
+  letter-spacing: -0.10px;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.12s ease;
+  white-space: nowrap;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:active { transform: scale(0.97); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 9999px;
+  font-size: 18px;
+  font-weight: 480;
+  letter-spacing: -0.10px;
+  font-family: 'Inter', sans-serif;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.12s ease;
+  white-space: nowrap;
+}
+.btn-secondary:hover { background-color: hsl(var(--surface-soft)); }
+.btn-secondary:active { transform: scale(0.97); }
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: hsl(var(--surface-soft));
+  border: 1px solid hsl(var(--border));
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+.btn-icon:hover { background-color: hsl(var(--border)); }
+
+/* Card */
+.card-editorial {
+  background: #fff;
+  border: 1px solid hsl(var(--hairline));
+  border-radius: 24px;
+  padding: 32px;
+}
+.card-sm {
+  background: #fff;
+  border: 1px solid hsl(var(--hairline));
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+/* Persona card on surface-soft */
+.card-persona {
+  background: hsl(var(--surface-soft));
+  border: 1px solid hsl(var(--hairline));
+  border-radius: 24px;
+  padding: 28px;
+}
+
+/* Score badge */
+.score-high {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: hsl(137 69% 37% / 0.1);
+  color: hsl(var(--semantic-success));
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.3px;
+}
+.score-mid {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: hsl(var(--hairline-soft));
+  color: #000;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.3px;
+}
+.score-low {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: hsl(337 100% 62% / 0.1);
+  color: hsl(var(--accent));
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.3px;
+}
+
+/* Hairline rule */
+.hairline { border-color: hsl(var(--hairline)); }
+.hairline-soft { border-color: hsl(var(--hairline-soft)); }
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
