@@ -1,0 +1,61 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.hero {
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #9a3412;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 42rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.notes {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(120, 53, 15, 0.15);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 45px rgba(120, 53, 15, 0.08);
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.card h2,
+.notes h2 {
+  margin-bottom: 0.5rem;
+}
+
+.card code {
+  margin-top: 1rem;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

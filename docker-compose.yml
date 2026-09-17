@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: personaai-mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-personaai}
+      MYSQL_USER: ${MYSQL_USER:-personaai}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-personaai}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-rootpassword}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  chromadb:
+    image: chromadb/chroma:0.5.23
+    container_name: personaai-chromadb
+    environment:
+      IS_PERSISTENT: "TRUE"
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+
+volumes:
+  mysql-data:
+  chroma-data:

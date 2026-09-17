@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+.vscode/
+
+backend/.gradle/
+backend/build/
+
+frontend/node_modules/
+frontend/dist/
+
+ai-server/.venv/
+ai-server/.pytest_cache/
+__pycache__/
+
+.env
